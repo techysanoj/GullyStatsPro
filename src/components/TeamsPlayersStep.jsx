@@ -166,7 +166,7 @@ const TeamsPlayersStep = ({ matchData, updateTeamData }) => {
     <div className="teams-players-step">
       <div className="teams-header">
         <h2 className="section-title">Teams & Players</h2>
-        <p className="section-subtitle">Add 5-15 players per team and select captain & wicketkeeper</p>
+        <p className="section-subtitle">Add 3-15 players per team and select captain & wicketkeeper</p>
       </div>
 
       <div className="teams-container">

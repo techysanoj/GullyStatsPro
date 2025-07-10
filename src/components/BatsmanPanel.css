@@ -1,0 +1,210 @@
+.batsman-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+
+.panel-header {
+  margin-bottom: 16px;
+}
+
+.panel-header h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 600;
+}
+
+.batsmen-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.batsman-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.batsman-card.striker {
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border-color: #28a745;
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.2);
+}
+
+.batsman-card.striker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.batsman-card.non-striker {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-color: #dee2e6;
+}
+
+.batsman-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.batsman-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.batsman-name-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.batsman-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.captain-icon {
+  font-size: 0.9rem;
+  filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.3));
+}
+
+.striker-icon {
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.batsman-position {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.batsman-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  font-family: 'Oswald', sans-serif;
+}
+
+.partnership-info {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.partnership-header {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.partnership-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.partnership-runs {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #28a745;
+  font-family: 'Oswald', sans-serif;
+}
+
+.partnership-balls {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .batsman-panel {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .panel-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .batsman-card {
+    padding: 12px;
+  }
+  
+  .batsman-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .stat-value {
+    font-size: 1.1rem;
+  }
+  
+  .partnership-stats {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .batsman-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .batsman-name {
+    font-size: 1rem;
+  }
+}
